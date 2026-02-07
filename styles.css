@@ -1,0 +1,788 @@
+/* ==========================================
+   NORA VALENTINE'S DAY WEBSITE - STYLES
+   ========================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff6b8a;
+    --pink-light: #ffb3c6;
+    --pink-dark: #e84574;
+    --coral: #ff8a80;
+    --lavender: #c9b1ff;
+    --lilac: #e8d5f5;
+    --cream: #fff9f5;
+    --gold: #ffd700;
+    --peach: #ffdab9;
+    --white: #ffffff;
+    --text: #4a3040;
+    --text-light: #7a6070;
+    --font-handwritten: 'Caveat', cursive;
+    --font-clean: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-clean);
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-inner {
+    max-width: 1100px;
+    width: 100%;
+    padding: 80px 24px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-handwritten);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--pink-dark);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    font-family: var(--font-clean);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 48px;
+    font-weight: 300;
+}
+
+/* ==========================================
+   SECTION 1: HERO / LANDING
+   ========================================== */
+.hero {
+    background: linear-gradient(135deg, #ffe0e6 0%, #ffd6e0 25%, #f5d5f0 50%, #ddd6f3 75%, #e0c3fc 100%);
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hearts-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    color: rgba(255, 107, 138, 0.3);
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh) rotate(360deg) scale(1);
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-subtitle {
+    font-family: var(--font-handwritten);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--pink);
+    margin-bottom: 12px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-title {
+    font-family: var(--font-handwritten);
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-title .highlight {
+    color: var(--pink-dark);
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite 1.5s;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.05); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.05); }
+    60% { transform: scale(1); }
+}
+
+.hero-nicknames {
+    font-family: var(--font-clean);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-light);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.enter-btn {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+    color: var(--white);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(232, 69, 116, 0.3);
+    animation: fadeInUp 1s ease-out 0.8s both, bounce 2s ease-in-out infinite 2s;
+}
+
+.enter-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(232, 69, 116, 0.4);
+}
+
+.enter-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.heart-icon {
+    display: inline-block;
+    animation: heartPulse 1s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* Confetti */
+.confetti-container {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   SECTION 2: WRITTEN IN THE STARS
+   ========================================== */
+.stars-section {
+    background: linear-gradient(180deg, var(--cream) 0%, #f0e6f6 50%, #e8d5f5 100%);
+}
+
+.flip-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 32px;
+    padding: 0 16px;
+}
+
+.flip-card {
+    perspective: 1000px;
+    height: 240px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, var(--white) 0%, var(--lilac) 100%);
+    box-shadow: 0 8px 30px rgba(201, 177, 255, 0.3);
+    border: 2px solid rgba(201, 177, 255, 0.3);
+}
+
+.flip-card-front:hover {
+    box-shadow: 0 12px 40px rgba(201, 177, 255, 0.5);
+}
+
+.card-emoji {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.card-label {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.card-hint {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 100%);
+    transform: rotateY(180deg);
+    box-shadow: 0 8px 30px rgba(255, 107, 138, 0.3);
+}
+
+.card-reveal {
+    font-family: var(--font-clean);
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.card-reveal strong {
+    color: var(--pink-dark);
+    font-size: 1.15rem;
+}
+
+.card-odds {
+    font-family: var(--font-handwritten);
+    font-size: 1.3rem;
+    color: var(--pink-dark);
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.cards-counter {
+    text-align: center;
+    font-family: var(--font-handwritten);
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
+/* ==========================================
+   SECTION 3: PHOTO MEMORY WALL
+   ========================================== */
+.photos-section {
+    background: linear-gradient(180deg, #e8d5f5 0%, var(--cream) 30%, #fff0f3 100%);
+    min-height: auto;
+    padding: 80px 0;
+}
+
+.polaroid-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 32px;
+    padding: 0 16px;
+}
+
+.polaroid {
+    background: var(--white);
+    padding: 12px 12px 48px 12px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transform: rotate(var(--rotation, 0deg));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    opacity: 0;
+    animation: polaroidIn 0.6s ease-out forwards;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+@keyframes polaroidIn {
+    from {
+        opacity: 0;
+        transform: rotate(var(--rotation, 0deg)) scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(var(--rotation, 0deg)) scale(1) translateY(0);
+    }
+}
+
+.polaroid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+}
+
+.polaroid-caption {
+    font-family: var(--font-handwritten);
+    font-size: 1.2rem;
+    color: var(--text);
+    text-align: center;
+    margin-top: 12px;
+    padding: 0 4px;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px;
+    cursor: pointer;
+}
+
+.lightbox.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 2.5rem;
+    color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+.lightbox-caption {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* ==========================================
+   SECTION 4: REASONS I LOVE YOU
+   ========================================== */
+.reasons-section {
+    background: linear-gradient(180deg, #fff0f3 0%, #ffe8ee 50%, #fce4ec 100%);
+    min-height: auto;
+    padding: 80px 0;
+}
+
+.reasons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    padding: 0 16px;
+}
+
+.reason-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255, 107, 138, 0.1);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.reason-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reason-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(255, 107, 138, 0.2);
+}
+
+.reason-card:nth-child(1) { border-top: 4px solid var(--pink); }
+.reason-card:nth-child(2) { border-top: 4px solid var(--lavender); }
+.reason-card:nth-child(3) { border-top: 4px solid var(--coral); }
+.reason-card:nth-child(4) { border-top: 4px solid var(--gold); }
+.reason-card:nth-child(5) { border-top: 4px solid var(--pink-dark); }
+.reason-card:nth-child(6) { border-top: 4px solid var(--peach); }
+
+.reason-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.reason-card h3 {
+    font-family: var(--font-handwritten);
+    font-size: 1.8rem;
+    color: var(--pink-dark);
+    margin-bottom: 12px;
+}
+
+.reason-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+/* ==========================================
+   SECTION 5: BASKETBALL MINI-GAME
+   ========================================== */
+.game-section {
+    background: linear-gradient(180deg, #fce4ec 0%, #fff3e0 50%, #ffe8cc 100%);
+    min-height: auto;
+    padding: 80px 0;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-score {
+    font-family: var(--font-handwritten);
+    font-size: 1.6rem;
+    color: var(--pink-dark);
+    background: var(--white);
+    padding: 10px 28px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+#basketballCanvas {
+    background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 55%, #c8a26e 55%, #c8a26e 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    cursor: grab;
+    max-width: 100%;
+    touch-action: none;
+}
+
+#basketballCanvas:active {
+    cursor: grabbing;
+}
+
+.game-instructions {
+    font-family: var(--font-clean);
+    font-size: 0.95rem;
+    color: var(--text-light);
+    text-align: center;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.love-note {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 100%);
+    padding: 20px 32px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 380px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(255, 107, 138, 0.2);
+}
+
+.love-note.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.love-note p {
+    font-family: var(--font-handwritten);
+    font-size: 1.3rem;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+/* ==========================================
+   SECTION 6: LOVE LETTER CLOSING
+   ========================================== */
+.letter-section {
+    background: linear-gradient(180deg, #ffe8cc 0%, #fce4ec 40%, #ffe0e6 100%);
+    min-height: 100vh;
+}
+
+.letter-container {
+    max-width: 600px;
+    margin: 0 auto 48px;
+}
+
+.letter-paper {
+    background: var(--white);
+    padding: 48px 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    position: relative;
+    transform: rotate(-1deg);
+    border-left: 4px solid var(--pink-light);
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--pink), var(--lavender), var(--pink));
+}
+
+.letter-date {
+    font-family: var(--font-clean);
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.letter-greeting {
+    font-family: var(--font-handwritten);
+    font-size: 1.8rem;
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+}
+
+.letter-body {
+    font-family: var(--font-clean);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 32px;
+    white-space: pre-line;
+}
+
+.letter-closing {
+    font-family: var(--font-handwritten);
+    font-size: 1.3rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.letter-signature {
+    font-size: 2rem;
+    color: var(--pink-dark);
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.final-hearts {
+    position: relative;
+    height: 80px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text {
+    text-align: center;
+    font-family: var(--font-handwritten);
+    font-size: 1.2rem;
+    color: var(--pink);
+    padding-bottom: 40px;
+}
+
+/* ==========================================
+   SCROLL ANIMATIONS
+   ========================================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .flip-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .flip-card {
+        height: 200px;
+    }
+
+    .card-emoji {
+        font-size: 2rem;
+    }
+
+    .card-label {
+        font-size: 1.2rem;
+    }
+
+    .card-reveal {
+        font-size: 0.9rem;
+    }
+
+    .polaroid-wall {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .polaroid img {
+        height: 180px;
+    }
+
+    .polaroid-caption {
+        font-size: 1rem;
+    }
+
+    .reasons-container {
+        grid-template-columns: 1fr;
+    }
+
+    .letter-paper {
+        padding: 32px 24px;
+    }
+
+    #basketballCanvas {
+        width: 340px;
+        height: 460px;
+    }
+
+    .section-inner {
+        padding: 60px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .flip-card {
+        height: 180px;
+    }
+
+    .polaroid-wall {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .polaroid {
+        padding: 8px 8px 36px 8px;
+    }
+
+    .polaroid img {
+        height: 150px;
+    }
+
+    #basketballCanvas {
+        width: 300px;
+        height: 420px;
+    }
+}
+

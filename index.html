@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Nori!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============ SECTION 1: LANDING / HERO ============ -->
+    <section id="hero" class="section hero">
+        <div class="hearts-bg" id="heartsBg"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">to my favorite person</p>
+            <h1 class="hero-title">Happy Valentine's Day,<br><span class="highlight">Nori</span></h1>
+            <p class="hero-nicknames">Nora &bull; Nori &bull; Princess &bull; Seaweed</p>
+            <button class="enter-btn" id="enterBtn">
+                <span class="heart-icon">&hearts;</span> Click to Begin <span class="heart-icon">&hearts;</span>
+            </button>
+        </div>
+        <div class="confetti-container" id="confetti"></div>
+    </section>
+
+    <!-- ============ SECTION 2: WRITTEN IN THE STARS ============ -->
+    <section id="stars" class="section stars-section">
+        <div class="section-inner">
+            <h2 class="section-title">Written in the Stars</h2>
+            <p class="section-subtitle">Some things are just meant to be...</p>
+            <div class="flip-cards-grid">
+                <!-- Card 1: Dads named Mike -->
+                <div class="flip-card" data-index="0">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="card-emoji">&#128104;</span>
+                            <p class="card-label">Our Dads</p>
+                            <p class="card-hint">tap to reveal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-reveal">Both of our dads are named <strong>Mike</strong></p>
+                            <p class="card-odds">What are the odds?!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2: SAT scores -->
+                <div class="flip-card" data-index="1">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="card-emoji">&#128218;</span>
+                            <p class="card-label">SAT Scores</p>
+                            <p class="card-hint">tap to reveal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-reveal">We both got a <strong>1520</strong> on the SAT</p>
+                            <p class="card-odds">Nerds in love!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3: Birthdays -->
+                <div class="flip-card" data-index="2">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="card-emoji">&#127874;</span>
+                            <p class="card-label">Our Birthdays</p>
+                            <p class="card-hint">tap to reveal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-reveal">Born <strong>1 day apart</strong><br>May 14 &amp; May 15</p>
+                            <p class="card-odds">Almost twins!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4: Ski Suits -->
+                <div class="flip-card" data-index="3">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="card-emoji">&#9975;</span>
+                            <p class="card-label">Ski Fits</p>
+                            <p class="card-hint">tap to reveal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-reveal">We both showed up in <strong>matching retro ski suits</strong> that were our parents' old ones</p>
+                            <p class="card-odds">You can't make this up!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5: Brothers in Fiji -->
+                <div class="flip-card" data-index="4">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="card-emoji">&#129309;</span>
+                            <p class="card-label">Our Brothers</p>
+                            <p class="card-hint">tap to reveal</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="card-reveal">Both of our brothers were in <strong>Phi Gamma Delta (Fiji)</strong></p>
+                            <p class="card-odds">It runs in the family!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="cards-counter" id="cardsCounter">0 of 5 revealed</p>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 3: PHOTO MEMORY WALL ============ -->
+    <section id="photos" class="section photos-section">
+        <div class="section-inner">
+            <h2 class="section-title">Our Memories</h2>
+            <p class="section-subtitle">Every moment with you is my favorite</p>
+            <div class="polaroid-wall" id="polaroidWall">
+                <div class="polaroid" style="--rotation: -3deg;">
+                    <img src="photos/IMG_0062.JPG" alt="Matching ski suits" loading="lazy">
+                    <p class="polaroid-caption">Twinning on the mountain &#9975;</p>
+                </div>
+                <div class="polaroid" style="--rotation: 2deg;">
+                    <img src="photos/IMG_0084.JPG" alt="Apres ski" loading="lazy">
+                    <p class="polaroid-caption">Apr&egrave;s-ski queen</p>
+                </div>
+                <div class="polaroid" style="--rotation: -1deg;">
+                    <img src="photos/IMG_9498.JPG" alt="SF Bay Bridge" loading="lazy">
+                    <p class="polaroid-caption">Our city &hearts;</p>
+                </div>
+                <div class="polaroid" style="--rotation: 4deg;">
+                    <img src="photos/IMG_8628.jpg" alt="Museum date" loading="lazy">
+                    <p class="polaroid-caption">Museum date night</p>
+                </div>
+                <div class="polaroid" style="--rotation: -2deg;">
+                    <img src="photos/IMG_8622.jpg" alt="Museum kiss" loading="lazy">
+                    <p class="polaroid-caption">Couldn't help myself</p>
+                </div>
+                <div class="polaroid" style="--rotation: 3deg;">
+                    <img src="photos/IMG_1013.jpg" alt="Dressed up" loading="lazy">
+                    <p class="polaroid-caption">Cleaned up nice</p>
+                </div>
+                <div class="polaroid" style="--rotation: -4deg;">
+                    <img src="photos/IMG_9686.JPG" alt="Ice skating" loading="lazy">
+                    <p class="polaroid-caption">Ice skating at Union Square</p>
+                </div>
+                <div class="polaroid" style="--rotation: 1deg;">
+                    <img src="photos/IMG_9687.JPG" alt="Ice skating 2" loading="lazy">
+                    <p class="polaroid-caption">Graceful as always</p>
+                </div>
+                <div class="polaroid" style="--rotation: -3deg;">
+                    <img src="photos/IMG_9600.JPG" alt="Christmas kiss" loading="lazy">
+                    <p class="polaroid-caption">Kissing Santa &#127877;</p>
+                </div>
+                <div class="polaroid" style="--rotation: 2deg;">
+                    <img src="photos/IMG_9215.jpg" alt="Mirror selfie" loading="lazy">
+                    <p class="polaroid-caption">The cutest mirror selfie</p>
+                </div>
+                <div class="polaroid" style="--rotation: -1deg;">
+                    <img src="photos/IMG_9233.JPG" alt="Cozy night" loading="lazy">
+                    <p class="polaroid-caption">Wine &amp; cheese kind of night</p>
+                </div>
+                <div class="polaroid" style="--rotation: 3deg;">
+                    <img src="photos/IMG_9940.JPG" alt="Running" loading="lazy">
+                    <p class="polaroid-caption">Running by the Ferry Building</p>
+                </div>
+                <div class="polaroid" style="--rotation: -2deg;">
+                    <img src="photos/IMG_9772.JPG" alt="Sandwiches" loading="lazy">
+                    <p class="polaroid-caption">Sandwich dates &gt; everything</p>
+                </div>
+                <div class="polaroid" style="--rotation: 4deg;">
+                    <img src="photos/IMG_9854.JPG" alt="Dessert" loading="lazy">
+                    <p class="polaroid-caption">Sweet tooth &#127856;</p>
+                </div>
+                <div class="polaroid" style="--rotation: -3deg;">
+                    <img src="photos/IMG_8153.jpg" alt="Party" loading="lazy">
+                    <p class="polaroid-caption">Party vibes</p>
+                </div>
+                <div class="polaroid" style="--rotation: 1deg;">
+                    <img src="photos/IMG_9519.JPG" alt="Night out" loading="lazy">
+                    <p class="polaroid-caption">Night out together</p>
+                </div>
+                <div class="polaroid" style="--rotation: -2deg;">
+                    <img src="photos/IMG_9650.JPG" alt="Dancing" loading="lazy">
+                    <p class="polaroid-caption">Dancing queen &#128131;</p>
+                </div>
+                <div class="polaroid" style="--rotation: 3deg;">
+                    <img src="photos/IMG_9661.JPG" alt="Smiling" loading="lazy">
+                    <p class="polaroid-caption">That smile though</p>
+                </div>
+                <div class="polaroid" style="--rotation: -1deg;">
+                    <img src="photos/IMG_0087.JPG" alt="Laughing" loading="lazy">
+                    <p class="polaroid-caption">My favorite laugh</p>
+                </div>
+            </div>
+        </div>
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img src="" alt="" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 4: REASONS I LOVE YOU ============ -->
+    <section id="reasons" class="section reasons-section">
+        <div class="section-inner">
+            <h2 class="section-title">Reasons I Love You</h2>
+            <p class="section-subtitle">(definitely not a MECE list &mdash; sorry Aftab)</p>
+            <div class="reasons-container">
+                <div class="reason-card" data-delay="0">
+                    <div class="reason-icon">&#128150;</div>
+                    <h3>Your Smile</h3>
+                    <p>When you smile, it feels like everything in the world is on pause and all the chaos, hecticness, stress, and confusion halts for just a moment.</p>
+                </div>
+                <div class="reason-card" data-delay="100">
+                    <div class="reason-icon">&#129303;</div>
+                    <h3>Your Friendship</h3>
+                    <p>Your friendship ability is contagious and should be studied in a lab. You make everyone around you feel affirmed and seen.</p>
+                </div>
+                <div class="reason-card" data-delay="200">
+                    <div class="reason-icon">&#127758;</div>
+                    <h3>Your Worldview</h3>
+                    <p>You look at the world in an analytical yet optimistic way that is always inspiring. You understand how the world works, yet are hopeful for how it's changing.</p>
+                </div>
+                <div class="reason-card" data-delay="300">
+                    <div class="reason-icon">&#128170;</div>
+                    <h3>Your Drive</h3>
+                    <p>You work so hard at the things you care about. You show up, you push through, and you keep getting better. It makes me want to be better too.</p>
+                </div>
+                <div class="reason-card" data-delay="400">
+                    <div class="reason-icon">&#127936;</div>
+                    <h3>Your Game</h3>
+                    <p>You are so cute when you play basketball &mdash; although "cute" might be the wrong word... you are actually a beast and a hooper.</p>
+                </div>
+                <div class="reason-card" data-delay="500">
+                    <div class="reason-icon">&#10024;</div>
+                    <h3>Everything Else</h3>
+                    <p>How genuine, kind, and real you are &mdash; and how you inspire everyone around you to be as well. I'm the luckiest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 5: BASKETBALL MINI-GAME ============ -->
+    <section id="game" class="section game-section">
+        <div class="section-inner">
+            <h2 class="section-title">Shoot Your Shot &#127936;</h2>
+            <p class="section-subtitle">Make baskets to unlock love notes!</p>
+            <div class="game-wrapper">
+                <div class="game-score">
+                    <span>Nora's Love Points: </span><span id="gameScore">0</span>
+                </div>
+                <canvas id="basketballCanvas" width="380" height="500"></canvas>
+                <p class="game-instructions" id="gameInstructions">Click &amp; drag the ball, then release to shoot!</p>
+                <div class="love-note" id="loveNote">
+                    <p id="loveNoteText"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 6: LOVE LETTER CLOSING ============ -->
+    <section id="letter" class="section letter-section">
+        <div class="section-inner">
+            <div class="letter-container">
+                <div class="letter-paper">
+                    <p class="letter-date">February 14, 2026</p>
+                    <p class="letter-greeting">Dear Nori,</p>
+                    <p class="letter-body">
+                        <!-- GAVIN: Replace this placeholder with your own Valentine's message! -->
+                        [Write your Valentine's message here! Make it from the heart, just like your Christmas letter. She's going to love this whole thing, and your words here will be the perfect ending.]
+                    </p>
+                    <p class="letter-closing">
+                        All my love,<br>
+                        <span class="letter-signature">Gavin</span>
+                    </p>
+                </div>
+            </div>
+            <div class="final-hearts" id="finalHearts"></div>
+            <p class="footer-text">Made with &hearts; for the most amazing girl in the world</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
