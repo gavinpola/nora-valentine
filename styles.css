@@ -103,12 +103,8 @@ body {
         transform: translateY(100vh) rotate(0deg) scale(0.5);
         opacity: 0;
     }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
     100% {
         transform: translateY(-20vh) rotate(360deg) scale(1);
         opacity: 0;
@@ -123,14 +119,8 @@ body {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-subtitle {
@@ -146,31 +136,28 @@ body {
     font-size: clamp(2.8rem, 8vw, 5.5rem);
     color: var(--text);
     line-height: 1.1;
-    margin-bottom: 16px;
+    margin-bottom: 40px;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .hero-title .highlight {
     color: var(--pink-dark);
     display: inline-block;
-    animation: heartbeat 1.5s ease-in-out infinite 1.5s;
+    min-width: 200px;
 }
 
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.05); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.05); }
-    60% { transform: scale(1); }
+/* Rotating name heartbeat animation */
+@keyframes namePulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    20% { transform: scale(1.12); opacity: 1; }
+    40% { transform: scale(1); opacity: 1; }
+    55% { transform: scale(1.08); opacity: 1; }
+    70% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-.hero-nicknames {
-    font-family: var(--font-clean);
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: var(--text-light);
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out 0.6s both;
+.highlight.beating {
+    animation: namePulse 1.4s ease-in-out;
 }
 
 .enter-btn {
@@ -184,7 +171,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 8px 30px rgba(232, 69, 116, 0.3);
-    animation: fadeInUp 1s ease-out 0.8s both, bounce 2s ease-in-out infinite 2s;
+    animation: fadeInUp 1s ease-out 0.6s both, bounce 2s ease-in-out infinite 2s;
 }
 
 .enter-btn:hover {
@@ -229,14 +216,8 @@ body {
 }
 
 @keyframes confettiFall {
-    0% {
-        transform: translateY(0) rotate(0deg) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(720deg) scale(0.3);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg) scale(0.3); opacity: 0; }
 }
 
 /* ==========================================
@@ -297,10 +278,7 @@ body {
     box-shadow: 0 12px 40px rgba(201, 177, 255, 0.5);
 }
 
-.card-emoji {
-    font-size: 3rem;
-    margin-bottom: 8px;
-}
+.card-emoji { font-size: 3rem; margin-bottom: 8px; }
 
 .card-label {
     font-family: var(--font-handwritten);
@@ -309,11 +287,7 @@ body {
     margin-bottom: 8px;
 }
 
-.card-hint {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    opacity: 0.7;
-}
+.card-hint { font-size: 0.8rem; color: var(--text-light); opacity: 0.7; }
 
 .flip-card-back {
     background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 100%);
@@ -329,16 +303,12 @@ body {
     margin-bottom: 12px;
 }
 
-.card-reveal strong {
-    color: var(--pink-dark);
-    font-size: 1.15rem;
-}
+.card-reveal strong { color: var(--pink-dark); font-size: 1.15rem; }
 
 .card-odds {
     font-family: var(--font-handwritten);
     font-size: 1.3rem;
     color: var(--pink-dark);
-    animation: heartbeat 1.5s ease-in-out infinite;
 }
 
 .cards-counter {
@@ -346,68 +316,202 @@ body {
     font-family: var(--font-handwritten);
     font-size: 1.3rem;
     color: var(--text-light);
+    transition: all 0.3s ease;
 }
 
 /* ==========================================
-   SECTION 3: PHOTO MEMORY WALL
+   SECTION 3: BASKETBALL GAME + PHOTO GRID
    ========================================== */
-.photos-section {
-    background: linear-gradient(180deg, #e8d5f5 0%, var(--cream) 30%, #fff0f3 100%);
+.game-section {
+    background: linear-gradient(180deg, #e8d5f5 0%, var(--cream) 20%, #fff3e0 60%, #ffe8cc 100%);
     min-height: auto;
     padding: 80px 0;
 }
 
-.polaroid-wall {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 32px;
-    padding: 0 16px;
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
 }
 
-.polaroid {
+.game-score {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    color: var(--pink-dark);
     background: var(--white);
-    padding: 12px 12px 48px 12px;
+    padding: 10px 28px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.photos-unlocked-label {
+    color: var(--text-light);
+}
+
+#basketballCanvas {
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    cursor: grab;
+    max-width: 100%;
+    touch-action: none;
+}
+
+#basketballCanvas:active { cursor: grabbing; }
+
+.game-instructions {
+    font-family: var(--font-clean);
+    font-size: 0.95rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.unlock-toast {
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 100%);
+    padding: 16px 32px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 380px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(255, 107, 138, 0.2);
+    min-height: 0;
+    max-height: 0;
+    padding: 0 32px;
+    overflow: hidden;
+}
+
+.unlock-toast.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    padding: 16px 32px;
+    min-height: auto;
+    max-height: 80px;
+}
+
+.unlock-toast p {
+    font-family: var(--font-handwritten);
+    font-size: 1.3rem;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+/* Photo Grid */
+.photo-grid-container {
+    margin-top: 24px;
+}
+
+.photo-grid-title {
+    font-family: var(--font-handwritten);
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.photo-grid-title.all-unlocked {
+    color: var(--pink-dark);
+    font-size: 1.8rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+    padding: 0 8px;
+}
+
+.grid-photo {
+    background: var(--white);
+    padding: 10px 10px 44px 10px;
     border-radius: 4px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     transform: rotate(var(--rotation, 0deg));
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    opacity: 0;
-    animation: polaroidIn 0.6s ease-out forwards;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
 }
 
-.polaroid:hover {
+.grid-photo img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+    transition: filter 0.8s ease;
+}
+
+.grid-photo.locked img {
+    filter: blur(18px) grayscale(0.3);
+}
+
+.grid-photo.locked {
+    cursor: default;
+}
+
+.grid-photo:not(.locked) {
+    cursor: pointer;
+}
+
+.grid-photo:not(.locked):hover {
     transform: rotate(0deg) scale(1.05) translateY(-8px);
     box-shadow: 0 16px 40px rgba(0,0,0,0.15);
     z-index: 10;
 }
 
-@keyframes polaroidIn {
-    from {
-        opacity: 0;
-        transform: rotate(var(--rotation, 0deg)) scale(0.8) translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: rotate(var(--rotation, 0deg)) scale(1) translateY(0);
-    }
+.lock-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    transition: all 0.6s ease;
 }
 
-.polaroid img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    display: block;
-    border-radius: 2px;
+.lock-overlay span {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
 }
 
-.polaroid-caption {
+.grid-photo:not(.locked) .lock-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.grid-caption {
     font-family: var(--font-handwritten);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text);
     text-align: center;
-    margin-top: 12px;
+    margin-top: 10px;
     padding: 0 4px;
+    transition: opacity 0.5s ease;
+}
+
+.grid-photo.locked .grid-caption {
+    opacity: 0;
+}
+
+.grid-photo:not(.locked) .grid-caption {
+    opacity: 1;
+}
+
+/* Unlock animation */
+@keyframes photoUnlock {
+    0% { transform: rotate(var(--rotation, 0deg)) scale(1); }
+    30% { transform: rotate(0deg) scale(1.08); box-shadow: 0 12px 40px rgba(255, 107, 138, 0.4); }
+    60% { transform: rotate(0deg) scale(1.03); }
+    100% { transform: rotate(var(--rotation, 0deg)) scale(1); }
+}
+
+.grid-photo.just-unlocked {
+    animation: photoUnlock 0.8s ease-out;
 }
 
 /* Lightbox */
@@ -456,9 +560,7 @@ body {
     transition: transform 0.2s;
 }
 
-.lightbox-close:hover {
-    transform: scale(1.2);
-}
+.lightbox-close:hover { transform: scale(1.2); }
 
 .lightbox-caption {
     font-family: var(--font-handwritten);
@@ -469,10 +571,10 @@ body {
 }
 
 /* ==========================================
-   SECTION 4: REASONS I LOVE YOU
+   SECTION 4: REASONS YOU'RE THE BEST
    ========================================== */
 .reasons-section {
-    background: linear-gradient(180deg, #fff0f3 0%, #ffe8ee 50%, #fce4ec 100%);
+    background: linear-gradient(180deg, #ffe8cc 0%, #fff0f3 50%, #fce4ec 100%);
     min-height: auto;
     padding: 80px 0;
 }
@@ -513,10 +615,7 @@ body {
 .reason-card:nth-child(5) { border-top: 4px solid var(--pink-dark); }
 .reason-card:nth-child(6) { border-top: 4px solid var(--peach); }
 
-.reason-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-}
+.reason-icon { font-size: 2.5rem; margin-bottom: 16px; }
 
 .reason-card h3 {
     font-family: var(--font-handwritten);
@@ -532,81 +631,10 @@ body {
 }
 
 /* ==========================================
-   SECTION 5: BASKETBALL MINI-GAME
-   ========================================== */
-.game-section {
-    background: linear-gradient(180deg, #fce4ec 0%, #fff3e0 50%, #ffe8cc 100%);
-    min-height: auto;
-    padding: 80px 0;
-}
-
-.game-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.game-score {
-    font-family: var(--font-handwritten);
-    font-size: 1.6rem;
-    color: var(--pink-dark);
-    background: var(--white);
-    padding: 10px 28px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-#basketballCanvas {
-    background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 55%, #c8a26e 55%, #c8a26e 100%);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    cursor: grab;
-    max-width: 100%;
-    touch-action: none;
-}
-
-#basketballCanvas:active {
-    cursor: grabbing;
-}
-
-.game-instructions {
-    font-family: var(--font-clean);
-    font-size: 0.95rem;
-    color: var(--text-light);
-    text-align: center;
-    animation: bounce 2s ease-in-out infinite;
-}
-
-.love-note {
-    background: linear-gradient(135deg, var(--pink-light) 0%, var(--lavender) 100%);
-    padding: 20px 32px;
-    border-radius: 16px;
-    text-align: center;
-    max-width: 380px;
-    opacity: 0;
-    transform: translateY(10px) scale(0.95);
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(255, 107, 138, 0.2);
-}
-
-.love-note.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-.love-note p {
-    font-family: var(--font-handwritten);
-    font-size: 1.3rem;
-    color: var(--text);
-    line-height: 1.4;
-}
-
-/* ==========================================
-   SECTION 6: LOVE LETTER CLOSING
+   SECTION 5: LETTER CLOSING
    ========================================== */
 .letter-section {
-    background: linear-gradient(180deg, #ffe8cc 0%, #fce4ec 40%, #ffe0e6 100%);
+    background: linear-gradient(180deg, #fce4ec 0%, #ffe0e6 40%, #f5d5f0 100%);
     min-height: 100vh;
 }
 
@@ -688,20 +716,6 @@ body {
 }
 
 /* ==========================================
-   SCROLL ANIMATIONS
-   ========================================== */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.scroll-reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 768px) {
@@ -709,52 +723,25 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
+    .flip-card { height: 200px; }
+    .card-emoji { font-size: 2rem; }
+    .card-label { font-size: 1.2rem; }
+    .card-reveal { font-size: 0.9rem; }
 
-    .flip-card {
-        height: 200px;
-    }
-
-    .card-emoji {
-        font-size: 2rem;
-    }
-
-    .card-label {
-        font-size: 1.2rem;
-    }
-
-    .card-reveal {
-        font-size: 0.9rem;
-    }
-
-    .polaroid-wall {
+    .photo-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
+    .grid-photo img { height: 180px; }
+    .grid-caption { font-size: 1rem; }
 
-    .polaroid img {
-        height: 180px;
-    }
+    .reasons-container { grid-template-columns: 1fr; }
+    .letter-paper { padding: 32px 24px; }
 
-    .polaroid-caption {
-        font-size: 1rem;
-    }
+    #basketballCanvas { width: 340px; height: 460px; }
+    .section-inner { padding: 60px 16px; }
 
-    .reasons-container {
-        grid-template-columns: 1fr;
-    }
-
-    .letter-paper {
-        padding: 32px 24px;
-    }
-
-    #basketballCanvas {
-        width: 340px;
-        height: 460px;
-    }
-
-    .section-inner {
-        padding: 60px 16px;
-    }
+    .hero-title .highlight { min-width: 160px; }
 }
 
 @media (max-width: 480px) {
@@ -762,27 +749,17 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
+    .flip-card { height: 180px; }
 
-    .flip-card {
-        height: 180px;
-    }
-
-    .polaroid-wall {
+    .photo-grid {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
+    .grid-photo { padding: 8px 8px 36px 8px; }
+    .grid-photo img { height: 140px; }
 
-    .polaroid {
-        padding: 8px 8px 36px 8px;
-    }
+    #basketballCanvas { width: 300px; height: 420px; }
 
-    .polaroid img {
-        height: 150px;
-    }
-
-    #basketballCanvas {
-        width: 300px;
-        height: 420px;
-    }
+    .hero-title .highlight { min-width: 120px; }
+    .game-score { font-size: 1.2rem; padding: 8px 18px; }
 }
-

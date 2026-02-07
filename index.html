@@ -15,8 +15,7 @@
         <div class="hearts-bg" id="heartsBg"></div>
         <div class="hero-content">
             <p class="hero-subtitle">to my favorite person</p>
-            <h1 class="hero-title">Happy Valentine's Day,<br><span class="highlight">Nori</span></h1>
-            <p class="hero-nicknames">Nora &bull; Nori &bull; Princess &bull; Seaweed</p>
+            <h1 class="hero-title">Happy Valentine's Day,<br><span class="highlight" id="rotatingName">Nori</span></h1>
             <button class="enter-btn" id="enterBtn">
                 <span class="heart-icon">&hearts;</span> Click to Begin <span class="heart-icon">&hearts;</span>
             </button>
@@ -54,7 +53,7 @@
                         </div>
                         <div class="flip-card-back">
                             <p class="card-reveal">We both got a <strong>1520</strong> on the SAT</p>
-                            <p class="card-odds">Nerds in love!</p>
+                            <p class="card-odds">Nerd power couple!</p>
                         </div>
                     </div>
                 </div>
@@ -105,87 +104,117 @@
         </div>
     </section>
 
-    <!-- ============ SECTION 3: PHOTO MEMORY WALL ============ -->
-    <section id="photos" class="section photos-section">
+    <!-- ============ SECTION 3: SHOOT YOUR SHOT + PHOTO GALLERY ============ -->
+    <section id="game" class="section game-section">
         <div class="section-inner">
-            <h2 class="section-title">Our Memories</h2>
-            <p class="section-subtitle">Every moment with you is my favorite</p>
-            <div class="polaroid-wall" id="polaroidWall">
-                <div class="polaroid" style="--rotation: -3deg;">
-                    <img src="photos/IMG_0062.JPG" alt="Matching ski suits" loading="lazy">
-                    <p class="polaroid-caption">Twinning on the mountain &#9975;</p>
+            <h2 class="section-title">Shoot Your Shot &#127936;</h2>
+            <p class="section-subtitle">Make baskets to unlock our photos!</p>
+            <div class="game-wrapper">
+                <div class="game-score">
+                    <span>Baskets: </span><span id="gameScore">0</span><span> / 9</span>
+                    <span class="photos-unlocked-label">&nbsp;&bull;&nbsp;Photos: <span id="photosUnlocked">0</span> / 18</span>
                 </div>
-                <div class="polaroid" style="--rotation: 2deg;">
-                    <img src="photos/IMG_0084.JPG" alt="Apres ski" loading="lazy">
-                    <p class="polaroid-caption">Apr&egrave;s-ski queen</p>
+                <canvas id="basketballCanvas" width="380" height="500"></canvas>
+                <p class="game-instructions" id="gameInstructions">Drag down on the ball &amp; release to shoot!</p>
+                <div class="unlock-toast" id="unlockToast">
+                    <p id="unlockToastText"></p>
                 </div>
-                <div class="polaroid" style="--rotation: -1deg;">
-                    <img src="photos/IMG_9498.JPG" alt="SF Bay Bridge" loading="lazy">
-                    <p class="polaroid-caption">Our city &hearts;</p>
-                </div>
-                <div class="polaroid" style="--rotation: 4deg;">
-                    <img src="photos/IMG_8628.jpg" alt="Museum date" loading="lazy">
-                    <p class="polaroid-caption">Museum date night</p>
-                </div>
-                <div class="polaroid" style="--rotation: -2deg;">
-                    <img src="photos/IMG_8622.jpg" alt="Museum kiss" loading="lazy">
-                    <p class="polaroid-caption">Couldn't help myself</p>
-                </div>
-                <div class="polaroid" style="--rotation: 3deg;">
-                    <img src="photos/IMG_1013.jpg" alt="Dressed up" loading="lazy">
-                    <p class="polaroid-caption">Cleaned up nice</p>
-                </div>
-                <div class="polaroid" style="--rotation: -4deg;">
-                    <img src="photos/IMG_9686.JPG" alt="Ice skating" loading="lazy">
-                    <p class="polaroid-caption">Ice skating at Union Square</p>
-                </div>
-                <div class="polaroid" style="--rotation: 1deg;">
-                    <img src="photos/IMG_9687.JPG" alt="Ice skating 2" loading="lazy">
-                    <p class="polaroid-caption">Graceful as always</p>
-                </div>
-                <div class="polaroid" style="--rotation: -3deg;">
-                    <img src="photos/IMG_9600.JPG" alt="Christmas kiss" loading="lazy">
-                    <p class="polaroid-caption">Kissing Santa &#127877;</p>
-                </div>
-                <div class="polaroid" style="--rotation: 2deg;">
-                    <img src="photos/IMG_9215.jpg" alt="Mirror selfie" loading="lazy">
-                    <p class="polaroid-caption">The cutest mirror selfie</p>
-                </div>
-                <div class="polaroid" style="--rotation: -1deg;">
-                    <img src="photos/IMG_9233.JPG" alt="Cozy night" loading="lazy">
-                    <p class="polaroid-caption">Wine &amp; cheese kind of night</p>
-                </div>
-                <div class="polaroid" style="--rotation: 3deg;">
-                    <img src="photos/IMG_9940.JPG" alt="Running" loading="lazy">
-                    <p class="polaroid-caption">Running by the Ferry Building</p>
-                </div>
-                <div class="polaroid" style="--rotation: -2deg;">
-                    <img src="photos/IMG_9772.JPG" alt="Sandwiches" loading="lazy">
-                    <p class="polaroid-caption">Sandwich dates &gt; everything</p>
-                </div>
-                <div class="polaroid" style="--rotation: 4deg;">
-                    <img src="photos/IMG_9854.JPG" alt="Dessert" loading="lazy">
-                    <p class="polaroid-caption">Sweet tooth &#127856;</p>
-                </div>
-                <div class="polaroid" style="--rotation: -3deg;">
-                    <img src="photos/IMG_8153.jpg" alt="Party" loading="lazy">
-                    <p class="polaroid-caption">Party vibes</p>
-                </div>
-                <div class="polaroid" style="--rotation: 1deg;">
-                    <img src="photos/IMG_9519.JPG" alt="Night out" loading="lazy">
-                    <p class="polaroid-caption">Night out together</p>
-                </div>
-                <div class="polaroid" style="--rotation: -2deg;">
-                    <img src="photos/IMG_9650.JPG" alt="Dancing" loading="lazy">
-                    <p class="polaroid-caption">Dancing queen &#128131;</p>
-                </div>
-                <div class="polaroid" style="--rotation: 3deg;">
-                    <img src="photos/IMG_9661.JPG" alt="Smiling" loading="lazy">
-                    <p class="polaroid-caption">That smile though</p>
-                </div>
-                <div class="polaroid" style="--rotation: -1deg;">
-                    <img src="photos/IMG_0087.JPG" alt="Laughing" loading="lazy">
-                    <p class="polaroid-caption">My favorite laugh</p>
+            </div>
+
+            <!-- Locked Photo Grid -->
+            <div class="photo-grid-container">
+                <h3 class="photo-grid-title" id="photoGridTitle">&#128274; Make baskets to unlock memories!</h3>
+                <div class="photo-grid" id="photoGrid">
+                    <div class="grid-photo locked" data-idx="0" style="--rotation: -3deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_0062.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Twinning on the mountain &#9975;</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="1" style="--rotation: 2deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_0084.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Apr&egrave;s-ski queen</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="2" style="--rotation: -1deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9498.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Our city &hearts;</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="3" style="--rotation: 4deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_8628.jpg" alt="" loading="lazy">
+                        <p class="grid-caption">Museum date night</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="4" style="--rotation: -2deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_8622.jpg" alt="" loading="lazy">
+                        <p class="grid-caption">Couldn't help myself</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="5" style="--rotation: 3deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_1013.jpg" alt="" loading="lazy">
+                        <p class="grid-caption">Cleaned up nice</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="6" style="--rotation: -4deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9686.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Ice skating at Union Square</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="7" style="--rotation: -3deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9600.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Kissing Santa &#127877;</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="8" style="--rotation: 2deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9215.jpg" alt="" loading="lazy">
+                        <p class="grid-caption">The cutest mirror selfie</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="9" style="--rotation: -1deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9233.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Wine &amp; cheese kind of night</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="10" style="--rotation: 3deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9940.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Running by the Ferry Building</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="11" style="--rotation: -2deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9772.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Sandwich dates &gt; everything</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="12" style="--rotation: 4deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9854.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Sweet tooth &#127856;</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="13" style="--rotation: -3deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_8153.jpg" alt="" loading="lazy">
+                        <p class="grid-caption">Party vibes</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="14" style="--rotation: 1deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9519.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Night out together</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="15" style="--rotation: -2deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9650.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">Dancing queen &#128131;</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="16" style="--rotation: 3deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_9661.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">That smile though</p>
+                    </div>
+                    <div class="grid-photo locked" data-idx="17" style="--rotation: -1deg;">
+                        <div class="lock-overlay"><span>&#128274;</span></div>
+                        <img src="photos/IMG_0087.JPG" alt="" loading="lazy">
+                        <p class="grid-caption">My favorite laugh</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -197,10 +226,10 @@
         </div>
     </section>
 
-    <!-- ============ SECTION 4: REASONS I LOVE YOU ============ -->
+    <!-- ============ SECTION 4: REASONS YOU'RE THE BEST ============ -->
     <section id="reasons" class="section reasons-section">
         <div class="section-inner">
-            <h2 class="section-title">Reasons I Love You</h2>
+            <h2 class="section-title">Reasons You're the Best</h2>
             <p class="section-subtitle">(definitely not a MECE list &mdash; sorry Aftab)</p>
             <div class="reasons-container">
                 <div class="reason-card" data-delay="0">
@@ -237,25 +266,7 @@
         </div>
     </section>
 
-    <!-- ============ SECTION 5: BASKETBALL MINI-GAME ============ -->
-    <section id="game" class="section game-section">
-        <div class="section-inner">
-            <h2 class="section-title">Shoot Your Shot &#127936;</h2>
-            <p class="section-subtitle">Make baskets to unlock love notes!</p>
-            <div class="game-wrapper">
-                <div class="game-score">
-                    <span>Nora's Love Points: </span><span id="gameScore">0</span>
-                </div>
-                <canvas id="basketballCanvas" width="380" height="500"></canvas>
-                <p class="game-instructions" id="gameInstructions">Click &amp; drag the ball, then release to shoot!</p>
-                <div class="love-note" id="loveNote">
-                    <p id="loveNoteText"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ SECTION 6: LOVE LETTER CLOSING ============ -->
+    <!-- ============ SECTION 5: LOVE LETTER CLOSING ============ -->
     <section id="letter" class="section letter-section">
         <div class="section-inner">
             <div class="letter-container">
@@ -267,7 +278,7 @@
                         [Write your Valentine's message here! Make it from the heart, just like your Christmas letter. She's going to love this whole thing, and your words here will be the perfect ending.]
                     </p>
                     <p class="letter-closing">
-                        All my love,<br>
+                        Yours,<br>
                         <span class="letter-signature">Gavin</span>
                     </p>
                 </div>
@@ -280,4 +291,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
