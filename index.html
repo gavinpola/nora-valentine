@@ -269,17 +269,34 @@
     <!-- ============ SECTION 5: LOVE LETTER CLOSING ============ -->
     <section id="letter" class="section letter-section">
         <div class="section-inner">
-            <div class="letter-container">
+            <!-- Fake-out: no card -->
+            <div class="no-card-container" id="noCard">
+                <div class="no-card-emoji">&#129335;</div>
+                <h2 class="no-card-title">Okay, I'll be honest...</h2>
+                <p class="no-card-text">I didn't write you a card this time.</p>
+                <p class="no-card-shrug">I mean, I already made you a whole website. That's enough, right?</p>
+                <button class="no-card-btn" id="noCardBtn">...right?</button>
+            </div>
+
+            <!-- Real card (hidden initially) -->
+            <div class="letter-container hidden" id="realCard">
                 <div class="letter-paper">
                     <p class="letter-date">February 14, 2026</p>
                     <p class="letter-greeting">Dear Nori,</p>
-                    <p class="letter-body">
-                        <!-- GAVIN: Replace this placeholder with your own Valentine's message! -->
-                        [Write your Valentine's message here! Make it from the heart, just like your Christmas letter. She's going to love this whole thing, and your words here will be the perfect ending.]
+                    <p class="letter-body">Obviously I wrote you a card. Who do you think I am?
+
+You are genuinely the best person I know. I mean that. You take on the hardest problems &mdash; at work, in life, in everything &mdash; and you don't just handle them, you absolutely crush each and every one. You don't give anyone leeway, including yourself, and that kind of standard is rare. It's one of the many things that makes you so cool.
+
+You're so independent and so strong and I really, really like that about you. But I'd also be lying if I said I didn't miss you right now. Being away from you is hard. Like, actually hard. I catch myself thinking about what you're doing, whether you're hooping, whether you're laughing at something with your friends, whether you found a good sandwich spot without me.
+
+I can't wait to see you in SF. I can't wait to celebrate with you. And I really hope you didn't celebrate too much without me &mdash; but knowing you, you probably did, and honestly that also tracks.
+
+You are the best, Nora Bame. The actual best. And I'm the luckiest.
                     </p>
                     <p class="letter-closing">
                         Yours,<br>
-                        <span class="letter-signature">Gavin</span>
+                        <span class="letter-signature">Gavin</span><br>
+                        <span class="letter-title">Associate, BCG SF</span>
                     </p>
                 </div>
             </div>

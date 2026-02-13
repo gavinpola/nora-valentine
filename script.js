@@ -612,7 +612,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==========================================
-    // SECTION 5: FINAL HEARTS
+    // SECTION 5: FAKE-OUT CARD REVEAL
+    // ==========================================
+
+    const noCard = document.getElementById('noCard');
+    const realCard = document.getElementById('realCard');
+    const noCardBtn = document.getElementById('noCardBtn');
+
+    noCardBtn.addEventListener('click', () => {
+        noCard.classList.add('hidden');
+        realCard.classList.remove('hidden');
+        realCard.classList.add('revealing');
+        launchConfetti();
+    });
+
+
+    // ==========================================
+    // FINAL HEARTS
     // ==========================================
 
     const finalHearts = document.getElementById('finalHearts');
