@@ -778,6 +778,15 @@ body {
     margin-top: 2px;
 }
 
+.letter-footnote {
+    font-family: var(--font-handwritten);
+    font-size: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 24px;
+    text-align: right;
+}
+
 .final-hearts {
     position: relative;
     height: 80px;
